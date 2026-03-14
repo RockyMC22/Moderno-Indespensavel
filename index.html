@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moderno Indispensável – Electrodomésticos | Preços Loucos!</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --yellow: #FFD600;
+    --yellow-deep: #F5C800;
+    --red: #E31B1B;
+    --black: #111111;
+    --white: #FFFFFF;
+    --gray: #444444;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Nunito', sans-serif; background: var(--yellow); color: var(--black); overflow-x: hidden; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+    background: var(--black); display: flex; align-items: center; justify-content: space-between;
+    padding: 0.9rem 2.5rem; border-bottom: 4px solid var(--yellow);
+  }
+  .nav-logo-text { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; letter-spacing: 0.06em; color: var(--white); line-height: 1; }
+  .nav-logo-text span { color: var(--yellow); }
+  .outlet-badge { background: var(--red); color: var(--white); font-size: 0.6rem; font-weight: 900; letter-spacing: 0.15em; padding: 0.2rem 0.5rem; border-radius: 2px; text-transform: uppercase; display:inline-block; margin-top:3px; }
+  .nav-links { display: flex; gap: 2rem; }
+  .nav-links a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--yellow); }
+  .nav-cta { background: var(--yellow); color: var(--black); padding: 0.6rem 1.5rem; border-radius: 4px; font-size: 0.82rem; font-weight: 900; letter-spacing: 0.05em; text-decoration: none; text-transform: uppercase; transition: all 0.2s; }
+  .nav-cta:hover { background: var(--red); color: var(--white); }
+
+  /* HERO */
+  .hero { min-height: 100vh; background: var(--yellow); position: relative; overflow: hidden; display: flex; align-items: center; padding: 7rem 2.5rem 4rem; }
+  .hero::before { content: ''; position: absolute; right: -80px; top: 0; bottom: 0; width: 50%; background: var(--black); clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%); }
+  .hero-inner { position: relative; z-index: 2; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: 1200px; margin: 0 auto; width: 100%; align-items: center; }
+  .hero-tag { background: var(--red); color: var(--white); display: inline-block; font-size: 0.72rem; font-weight: 900; letter-spacing: 0.2em; text-transform: uppercase; padding: 0.4rem 1rem; margin-bottom: 1.2rem; transform: rotate(-1deg); }
+  .hero-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3.5rem, 7vw, 7rem); line-height: 0.95; letter-spacing: 0.02em; margin-bottom: 1rem; color: var(--black); }
+  .hero-title .loucos { color: var(--red); text-shadow: 4px 4px 0 var(--black); display: block; }
+  .hero-sub-banner { background: var(--black); color: var(--yellow); font-size: 0.9rem; font-weight: 900; letter-spacing: 0.03em; padding: 0.8rem 1.2rem; display: inline-block; margin-bottom: 1.5rem; text-transform: uppercase; position: relative; }
+  .hero-sub-banner::after { content: ''; position: absolute; right: -12px; top: 0; bottom: 0; width: 0; border-style: solid; border-width: 24px 0 24px 12px; border-color: transparent transparent transparent var(--black); }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2rem; }
+  .btn-hero { background: var(--red); color: var(--white); padding: 1rem 2.2rem; font-size: 1rem; font-weight: 900; border-radius: 4px; text-decoration: none; text-transform: uppercase; letter-spacing: 0.05em; transition: all 0.2s; border: 3px solid var(--black); box-shadow: 4px 4px 0 var(--black); }
+  .btn-hero:hover { transform: translate(-2px,-2px); box-shadow: 6px 6px 0 var(--black); }
+  .btn-hero-2 { background: var(--yellow-deep); color: var(--black); padding: 1rem 2.2rem; font-size: 1rem; font-weight: 900; border-radius: 4px; text-decoration: none; text-transform: uppercase; letter-spacing: 0.05em; transition: all 0.2s; border: 3px solid var(--black); box-shadow: 4px 4px 0 var(--black); }
+  .btn-hero-2:hover { transform: translate(-2px,-2px); box-shadow: 6px 6px 0 var(--black); }
+  .hero-right { display: flex; flex-direction: column; align-items: center; gap: 1.5rem; }
+  .preco-louco-badge { background: var(--red); color: var(--white); font-family: 'Bebas Neue', sans-serif; font-size: 4rem; letter-spacing: 0.05em; padding: 1.5rem 3rem; text-align: center; border: 5px solid var(--white); box-shadow: 8px 8px 0 rgba(255,255,255,0.15); transform: rotate(2deg); animation: wobble 3s ease-in-out infinite; line-height: 1.1; }
+  @keyframes wobble { 0%,100% { transform: rotate(2deg); } 50% { transform: rotate(-1deg); } }
+  .hero-stats { display: flex; gap: 1rem; }
+  .hero-stat { background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.2); padding: 1rem 1.2rem; text-align: center; border-radius: 4px; }
+  .hero-stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: var(--yellow); }
+  .hero-stat-label { font-size: 0.62rem; color: rgba(255,255,255,0.7); text-transform: uppercase; letter-spacing: 0.08em; }
+
+  /* MARQUEE */
+  .marquee-wrap { background: var(--red); border-top: 3px solid var(--black); border-bottom: 3px solid var(--black); overflow: hidden; white-space: nowrap; padding: 0.75rem 0; }
+  .marquee-inner { display: inline-block; animation: marquee 20s linear infinite; font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem; letter-spacing: 0.08em; color: var(--white); }
+  .marquee-inner span { margin: 0 2rem; color: var(--yellow); }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* ABOUT */
+  .about { background: var(--white); padding: 5rem 2.5rem; position: relative; overflow: hidden; }
+  .about::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 8px; background: var(--yellow); }
+  .about-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+  .stag { background: var(--yellow); color: var(--black); font-size: 0.7rem; font-weight: 900; letter-spacing: 0.2em; text-transform: uppercase; padding: 0.3rem 0.8rem; display: inline-block; margin-bottom: 1rem; }
+  .about-text h2 { font-family: 'Bebas Neue', sans-serif; font-size: 3.2rem; line-height: 1.05; margin-bottom: 1.2rem; }
+  .about-text h2 em { color: var(--red); font-style: normal; }
+  .about-text p { font-size: 0.95rem; line-height: 1.8; color: var(--gray); margin-bottom: 0.8rem; }
+  .about-features { display: flex; flex-direction: column; gap: 0.8rem; margin-top: 1.5rem; }
+  .about-feat { display: flex; align-items: center; gap: 0.8rem; font-size: 0.9rem; font-weight: 700; }
+  .feat-icon { background: var(--yellow); width: 32px; height: 32px; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; border: 2px solid var(--black); }
+  .about-visual { background: var(--yellow); border: 4px solid var(--black); border-radius: 8px; padding: 3rem 2rem; text-align: center; box-shadow: 8px 8px 0 var(--black); }
+  .about-visual h3 { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; margin-bottom: 0.3rem; }
+  .big-num { font-family: 'Bebas Neue', sans-serif; font-size: 6rem; color: var(--red); line-height: 1; text-shadow: 4px 4px 0 var(--black); }
+  .about-visual p { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; }
+  .about-social { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 2px solid rgba(0,0,0,0.15); display: flex; flex-direction: column; gap: 0.5rem; }
+  .social-link { display: flex; align-items: center; gap: 0.6rem; font-size: 0.82rem; font-weight: 700; color: var(--black); text-decoration: none; padding: 0.4rem 0; border-bottom: 1px solid rgba(0,0,0,0.1); }
+  .social-link:hover { color: var(--red); }
+
+  /* CATEGORIES */
+  .categories { background: var(--black); padding: 5rem 2.5rem; }
+  .categories-inner { max-width: 1100px; margin: 0 auto; }
+  .sh { margin-bottom: 3rem; }
+  .sh .stag2 { background: var(--yellow); color: var(--black); font-size: 0.7rem; font-weight: 900; letter-spacing: 0.2em; text-transform: uppercase; padding: 0.3rem 0.8rem; display: inline-block; margin-bottom: 1rem; }
+  .sh h2 { font-family: 'Bebas Neue', sans-serif; font-size: 3.5rem; color: var(--white); line-height: 1; }
+  .sh h2 em { color: var(--yellow); font-style: normal; }
+  .cats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; background: rgba(255,214,0,0.08); }
+  .cat-card { background: var(--black); padding: 2.5rem 2rem; border: 2px solid rgba(255,214,0,0.12); cursor: pointer; position: relative; overflow: hidden; transition: border-color 0.25s; }
+  .cat-card::before { content: ''; position: absolute; inset: 0; background: var(--yellow); transform: translateY(100%); transition: transform 0.3s; z-index: 0; }
+  .cat-card:hover::before { transform: translateY(0); }
+  .cat-card:hover { border-color: var(--yellow); }
+  .cat-card:hover .cat-name { color: var(--black); }
+  .cat-card:hover .cat-desc { color: rgba(0,0,0,0.7); }
+  .cat-card:hover .cat-arrow { color: var(--red); }
+  .cat-emoji { font-size: 3rem; margin-bottom: 1.2rem; position: relative; z-index: 1; }
+  .cat-name { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; color: var(--yellow); margin-bottom: 0.5rem; position: relative; z-index: 1; transition: color 0.25s; }
+  .cat-desc { font-size: 0.82rem; color: rgba(255,255,255,0.6); line-height: 1.6; position: relative; z-index: 1; transition: color 0.25s; }
+  .cat-arrow { margin-top: 1.5rem; font-size: 1.5rem; color: var(--yellow); position: relative; z-index: 1; transition: color 0.25s; }
+
+  /* SERVICES */
+  .services { background: var(--yellow); padding: 5rem 2.5rem; }
+  .services-inner { max-width: 1100px; margin: 0 auto; }
+  .services-inner .sh h2 { color: var(--black); }
+  .services-inner .sh h2 em { color: var(--red); }
+  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin-top: 3rem; }
+  .service-card { background: var(--white); border: 3px solid var(--black); box-shadow: 5px 5px 0 var(--black); padding: 2rem 1.5rem; border-radius: 4px; transition: all 0.2s; }
+  .service-card:hover { transform: translate(-3px,-3px); box-shadow: 8px 8px 0 var(--black); }
+  .service-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+  .service-name { font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem; margin-bottom: 0.5rem; }
+  .service-desc { font-size: 0.82rem; color: var(--gray); line-height: 1.7; }
+
+  /* REVIEWS */
+  .reviews { background: var(--black); padding: 5rem 2.5rem; }
+  .reviews-inner { max-width: 1100px; margin: 0 auto; }
+  .reviews-inner .sh .stag2 { background: var(--red); color: var(--white); }
+  .reviews-inner .sh h2 { color: var(--white); }
+  .reviews-inner .sh h2 em { color: var(--yellow); }
+  .rating-hero { display: flex; align-items: center; gap: 2rem; margin-bottom: 3rem; padding: 2rem 2.5rem; background: var(--yellow); border: 3px solid var(--black); box-shadow: 6px 6px 0 rgba(255,214,0,0.3); border-radius: 4px; }
+  .rating-big-num { font-family: 'Bebas Neue', sans-serif; font-size: 6rem; line-height: 1; color: var(--red); text-shadow: 3px 3px 0 var(--black); }
+  .rating-info h3 { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: var(--black); line-height: 1; }
+  .rating-stars { font-size: 1.5rem; color: var(--red); letter-spacing: 0.1em; margin: 0.3rem 0; }
+  .rating-count { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.7; }
+  .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .review-card { background: var(--white); border: 3px solid var(--yellow); padding: 1.8rem; border-radius: 4px; position: relative; }
+  .review-card::before { content: '"'; position: absolute; top: -0.3rem; left: 1rem; font-family: 'Bebas Neue', sans-serif; font-size: 4rem; color: var(--yellow); line-height: 1; }
+  .review-stars { color: var(--red); font-size: 0.9rem; letter-spacing: 0.05em; margin-bottom: 0.8rem; margin-top: 1.8rem; }
+  .review-text { font-size: 0.88rem; line-height: 1.75; color: var(--gray); margin-bottom: 1.2rem; }
+  .review-author { font-size: 0.75rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.1em; color: var(--black); }
+
+  /* CONTACT */
+  .contact-section { background: var(--yellow); padding: 5rem 2.5rem; }
+  .contact-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 1fr; gap: 3rem; align-items: start; }
+  .contact-inner .sh h2 { color: var(--black); }
+  .contact-inner .sh h2 em { color: var(--red); }
+  .hours-grid { display: flex; flex-direction: column; margin-top: 2rem; }
+  .hour-row { display: flex; justify-content: space-between; align-items: center; padding: 0.8rem 1.2rem; border-bottom: 2px solid var(--black); font-weight: 700; font-size: 0.9rem; }
+  .hour-row:first-child { border-top: 2px solid var(--black); }
+  .hour-row:nth-child(odd) { background: rgba(0,0,0,0.06); }
+  .hour-row .time { color: var(--black); }
+  .hour-row .closed { color: var(--red); }
+  .contact-cards { display: flex; flex-direction: column; gap: 1.2rem; }
+  .contact-card { background: var(--black); color: var(--white); padding: 1.5rem 1.8rem; border-radius: 4px; border: 3px solid var(--black); display: flex; align-items: flex-start; gap: 1rem; box-shadow: 4px 4px 0 rgba(0,0,0,0.25); }
+  .contact-card-icon { font-size: 1.8rem; flex-shrink: 0; }
+  .contact-card h4 { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--yellow); margin-bottom: 0.3rem; }
+  .contact-card p { font-size: 0.88rem; line-height: 1.5; }
+  .contact-card a { color: var(--yellow); text-decoration: none; font-weight: 700; }
+  .contact-card a:hover { color: var(--white); }
+
+  /* SOCIAL STRIP */
+  .social-strip { background: var(--red); border-top: 3px solid var(--black); padding: 1.8rem 2.5rem; display: flex; align-items: center; justify-content: center; gap: 3rem; flex-wrap: wrap; }
+  .social-item { display: flex; align-items: center; gap: 0.7rem; text-decoration: none; color: var(--white); font-weight: 800; font-size: 0.85rem; letter-spacing: 0.05em; transition: color 0.2s; }
+  .social-item:hover { color: var(--yellow); }
+  .social-item-icon { font-size: 1.4rem; }
+
+  /* FOOTER */
+  footer { background: var(--black); border-top: 4px solid var(--yellow); padding: 1.8rem 2.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+  .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem; color: var(--yellow); }
+  .footer-copy { font-size: 0.75rem; color: rgba(255,255,255,0.4); }
+  .footer-badge { font-size: 0.75rem; color: var(--yellow); font-weight: 700; }
+
+  /* REVEAL */
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s, transform 0.6s; }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  /* RESPONSIVE */
+  @media(max-width:900px){
+    .nav-links { display:none; }
+    nav { padding: 0.8rem 1.2rem; }
+    .hero { padding: 6rem 1.5rem 3rem; }
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero::before { display: none; }
+    .hero-right { display: none; }
+    .about-inner, .contact-inner { grid-template-columns: 1fr; }
+    .cats-grid, .services-grid { grid-template-columns: 1fr 1fr; }
+    .reviews-grid { grid-template-columns: 1fr; }
+    .rating-hero { flex-direction: column; text-align: center; }
+    footer { flex-direction: column; text-align: center; }
+    .social-strip { gap: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div>
+    <div class="nav-logo-text">Moderno <span>&amp;</span> Indispensável</div>
+    <span class="outlet-badge">Outlet Electrodomésticos</span>
+  </div>
+  <div class="nav-links">
+    <a href="#sobre">Sobre</a>
+    <a href="#categorias">Produtos</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#avaliacoes">Avaliações</a>
+    <a href="#contacto">Contacto</a>
+  </div>
+  <a href="tel:985440922" class="nav-cta">📞 985 440 922</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-tag">🔥 Outlet · São Domingos de Rana</div>
+      <h1 class="hero-title">
+        PREÇOS<br>
+        <span class="loucos">LOUCOS!</span>
+      </h1>
+      <div class="hero-sub-banner">50% mais baratos que o mercado!</div>
+      <p style="font-size:1rem;font-weight:700;max-width:440px;line-height:1.7;">Todos os nossos electrodomésticos têm o valor <strong>50% MAIS BAIXO</strong> que o mercado — alguns até mais. Garantia incluída, entrega ao domicílio.</p>
+      <div class="hero-actions">
+        <a href="#categorias" class="btn-hero">Ver Produtos</a>
+        <a href="tel:985440922" class="btn-hero-2">📞 Ligar Agora</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="preco-louco-badge">PREÇOS<br>LOUCOS!</div>
+      <p style="color:rgba(255,255,255,0.8);font-weight:700;font-size:0.85rem;text-align:center;letter-spacing:0.05em;text-transform:uppercase;">Todos os produtos com garantia</p>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="hero-stat-num">4,5★</div><div class="hero-stat-label">Google</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">1902</div><div class="hero-stat-label">Avaliações</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">-50%</div><div class="hero-stat-label">vs Mercado</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee-wrap">
+  <div class="marquee-inner">
+    🔥 PREÇOS LOUCOS <span>★</span> GARANTIA INCLUÍDA <span>★</span> ENTREGA AO DOMICÍLIO <span>★</span> 50% MAIS BARATO <span>★</span> MÁQUINAS DE LAVAR <span>★</span> FRIGORÍFICOS <span>★</span> FOGÕES <span>★</span> ARCAS CONGELADORAS <span>★</span> AR CONDICIONADO <span>★</span>
+    🔥 PREÇOS LOUCOS <span>★</span> GARANTIA INCLUÍDA <span>★</span> ENTREGA AO DOMICÍLIO <span>★</span> 50% MAIS BARATO <span>★</span> MÁQUINAS DE LAVAR <span>★</span> FRIGORÍFICOS <span>★</span> FOGÕES <span>★</span> ARCAS CONGELADORAS <span>★</span> AR CONDICIONADO <span>★</span>
+  </div>
+</div>
+
+<section class="about" id="sobre">
+  <div class="about-inner">
+    <div class="about-text reveal">
+      <div class="stag">Quem Somos</div>
+      <h2>A loja de confiança<br>do <em>seu lar</em></h2>
+      <p>A Moderno Indispensável é um outlet de electrodomésticos em São Domingos de Rana, com mais de <strong>1 900 clientes satisfeitos</strong> e uma avaliação de 4,5 estrelas no Google.</p>
+      <p>Empresa gerida por mulher, com foco na qualidade, no preço justo e no serviço personalizado. Todos os produtos incluem garantia e serviço de entrega ao domicílio.</p>
+      <div class="about-features">
+        <div class="about-feat"><div class="feat-icon">✅</div> Garantia em todos os produtos</div>
+        <div class="about-feat"><div class="feat-icon">🚚</div> Entrega e instalação ao domicílio</div>
+        <div class="about-feat"><div class="feat-icon">💰</div> Preços até 50% abaixo do mercado</div>
+        <div class="about-feat"><div class="feat-icon">♀️</div> Empresa gerida por mulher</div>
+      </div>
+    </div>
+    <div class="about-visual reveal">
+      <h3>Avaliação</h3>
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;">GOOGLE</div>
+      <div class="big-num">4,5★</div>
+      <p>Baseado em 1 902 avaliações</p>
+      <div class="about-social">
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:1.1rem;margin-bottom:0.5rem;">Siga-nos:</div>
+        <a href="https://instagram.com/modernoindispensavel" class="social-link" target="_blank">📸 @modernoindispensavel</a>
+        <a href="https://facebook.com/modernoeletro" class="social-link" target="_blank">👍 @modernoeletro</a>
+        <a href="mailto:modernoindispensavel@gmail.com" class="social-link">✉️ modernoindispensavel@gmail.com</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="categories" id="categorias">
+  <div class="categories-inner">
+    <div class="sh reveal">
+      <div class="stag2">Os Nossos Produtos</div>
+      <h2>Tudo para o <em>seu lar</em></h2>
+    </div>
+    <div class="cats-grid">
+      <div class="cat-card reveal"><div class="cat-emoji">🫧</div><div class="cat-name">Lavagem</div><div class="cat-desc">Máquinas de lavar roupa e loiça de topo, a preços imbatíveis.</div><div class="cat-arrow">→</div></div>
+      <div class="cat-card reveal"><div class="cat-emoji">❄️</div><div class="cat-name">Frio</div><div class="cat-desc">Frigoríficos, combinados, arcas congeladoras e adegas.</div><div class="cat-arrow">→</div></div>
+      <div class="cat-card reveal"><div class="cat-emoji">🍳</div><div class="cat-name">Cozinha</div><div class="cat-desc">Fogões, fornos, placas, exaustores e micro-ondas.</div><div class="cat-arrow">→</div></div>
+      <div class="cat-card reveal"><div class="cat-emoji">💨</div><div class="cat-name">Climatização</div><div class="cat-desc">Ar condicionado, aquecedores e ventiladores.</div><div class="cat-arrow">→</div></div>
+      <div class="cat-card reveal"><div class="cat-emoji">🧹</div><div class="cat-name">Limpeza</div><div class="cat-desc">Aspiradores, robots de limpeza e equipamentos domésticos.</div><div class="cat-arrow">→</div></div>
+      <div class="cat-card reveal"><div class="cat-emoji">📺</div><div class="cat-name">Electrónica</div><div class="cat-desc">Televisões, colunas e outros equipamentos electrónicos.</div><div class="cat-arrow">→</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="servicos">
+  <div class="services-inner">
+    <div class="sh reveal">
+      <div class="stag2">Como Trabalhamos</div>
+      <h2>Serviço <em>Completo</em></h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal"><div class="service-icon">🏪</div><div class="service-name">Compra em Loja</div><div class="service-desc">Visite-nos e experimente os produtos. Equipa especializada sempre disponível.</div></div>
+      <div class="service-card reveal"><div class="service-icon">🚚</div><div class="service-name">Entrega Domicílio</div><div class="service-desc">Entregamos e instalamos em casa, com profissionalismo e cuidado.</div></div>
+      <div class="service-card reveal"><div class="service-icon">🔄</div><div class="service-name">Levantamento em Loja</div><div class="service-desc">Encomende e levante quando lhe for mais conveniente.</div></div>
+      <div class="service-card reveal"><div class="service-icon">🛡️</div><div class="service-name">Garantia Total</div><div class="service-desc">Todos os produtos com garantia inclusa. Pós-venda de qualidade.</div></div>
+      <div class="service-card reveal"><div class="service-icon">💰</div><div class="service-name">Preços Loucos</div><div class="service-desc">Até 50% mais barato que o mercado. Poupança real, produtos de qualidade.</div></div>
+      <div class="service-card reveal"><div class="service-icon">❤️</div><div class="service-name">Atendimento Pessoal</div><div class="service-desc">Empresa familiar, com atenção ao detalhe e foco no cliente.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="reviews" id="avaliacoes">
+  <div class="reviews-inner">
+    <div class="sh reveal">
+      <div class="stag2">Avaliações Google</div>
+      <h2>O que dizem os <em>clientes</em></h2>
+    </div>
+    <div class="rating-hero reveal">
+      <div class="rating-big-num">4,5</div>
+      <div class="rating-info">
+        <h3>Avaliação no Google</h3>
+        <div class="rating-stars">★★★★½</div>
+        <div class="rating-count">Baseado em 1 902 avaliações reais</div>
+      </div>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card reveal">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"If you care about function over looks, this is the place! Great value for what you buy, with warranty and delivery service. Really happy with them, and with the money I saved."</p>
+        <div class="review-author">Ricardo Querido Marques · Local Guide</div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Très bon service 👍🏻 — Muito bom serviço, equipa super atenciosa. Fiquei muito satisfeita com a compra e com o atendimento."</p>
+        <div class="review-author">Jessica Le Cam</div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"👍👍👍👍 — Loja fantástica! Óptimo atendimento, grande variedade de produtos e preços imbatíveis. Recomendo a todos!"</p>
+        <div class="review-author">Sergey Asyanin</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-section" id="contacto">
+  <div class="contact-inner">
+    <div>
+      <div class="sh reveal">
+        <div class="stag2" style="background:var(--black);color:var(--yellow);">Horário & Contactos</div>
+        <h2>Venha <em>visitar-nos</em></h2>
+      </div>
+      <div class="hours-grid reveal">
+        <div class="hour-row"><span>Segunda</span><span class="time">10:00 – 19:00</span></div>
+        <div class="hour-row"><span>Terça</span><span class="time">10:00 – 19:00</span></div>
+        <div class="hour-row"><span>Quarta</span><span class="time">10:00 – 19:00</span></div>
+        <div class="hour-row"><span>Quinta</span><span class="time">10:00 – 19:00</span></div>
+        <div class="hour-row"><span>Sexta</span><span class="time">10:00 – 19:00</span></div>
+        <div class="hour-row"><span>Sábado</span><span class="time">10:00 – 19:00</span></div>
+        <div class="hour-row"><span>Domingo</span><span class="closed">ENCERRADO</span></div>
+      </div>
+    </div>
+    <div class="contact-cards reveal">
+      <div class="contact-card"><div class="contact-card-icon">📍</div><div><h4>Morada</h4><p>R. Alfredo da Silva 15, Armazém A<br>Abóboda, 2785-656 São Domingos de Rana</p></div></div>
+      <div class="contact-card"><div class="contact-card-icon">📞</div><div><h4>Telefone</h4><p><a href="tel:214096195">21 409 6195</a> &nbsp;|&nbsp; <a href="tel:985440922">985 440 922</a></p></div></div>
+      <div class="contact-card"><div class="contact-card-icon">✉️</div><div><h4>Email</h4><p><a href="mailto:modernoindispensavel@gmail.com">modernoindispensavel@gmail.com</a></p></div></div>
+      <div class="contact-card"><div class="contact-card-icon">🗺️</div><div><h4>Como Chegar</h4><p><a href="https://maps.google.com/?q=R.+Alfredo+da+Silva+15,+Ab%C3%B3boda,+S%C3%A3o+Domingos+de+Rana" target="_blank">Abrir no Google Maps →</a></p></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="social-strip">
+  <a href="https://instagram.com/modernoindispensavel" class="social-item" target="_blank"><span class="social-item-icon">📸</span> @modernoindispensavel</a>
+  <a href="https://facebook.com/modernoeletro" class="social-item" target="_blank"><span class="social-item-icon">👍</span> @modernoeletro</a>
+  <a href="mailto:modernoindispensavel@gmail.com" class="social-item"><span class="social-item-icon">✉️</span> modernoindispensavel@gmail.com</a>
+  <a href="tel:985440922" class="social-item"><span class="social-item-icon">📞</span> 985 440 922</a>
+</div>
+
+<footer>
+  <div class="footer-logo">Moderno &amp; Indispensável Electrodomésticos</div>
+  <div class="footer-copy">© 2025 Moderno Indispensável Electrodomésticos Unipessoal, Lda</div>
+  <div class="footer-badge">♀ Empresa gerida por Mulher</div>
+</footer>
+
+<script>
+  const els = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i * 70);
+    });
+  }, { threshold: 0.08 });
+  els.forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
